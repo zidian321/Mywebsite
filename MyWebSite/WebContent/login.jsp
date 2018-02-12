@@ -3,10 +3,10 @@
 <html>
   <head><title>登录界面</title></head>
   <body>
-    <form action="loginAction.action">
+    <form action="fdf/loginAction.action" method="post">
        用户名：<input name="username"><br>
        密 码：<input type="password" name="userpass"><br>
-      <input type="submit" value="提 交">
+      <input type="submit" value="注册">
       <input type="reset"  value="取 消">
     </form>
   </body>

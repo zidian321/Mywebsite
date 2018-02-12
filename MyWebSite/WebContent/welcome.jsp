@@ -5,6 +5,6 @@
     <title>欢迎</title>
   </head>
   <body>
-    <font color="red" size="10">登录成功！</font>
+    <font color="red" size="10">注册成功！</font>
   </body>
 </html>
