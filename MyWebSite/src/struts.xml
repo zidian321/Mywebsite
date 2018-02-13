@@ -11,7 +11,7 @@
 				/result.jsp
 			</result>
 		</action>
-		<action name="loginAction" class="com.LoginAction">
+		<action name="loginAction" class="com.action.LoginAction">
 			<result name="success">/welcome.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>

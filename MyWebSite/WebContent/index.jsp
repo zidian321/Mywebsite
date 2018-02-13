@@ -8,7 +8,7 @@
 </head>
 
 <body>
-hello Hong yu
+hello Hong yu!
 <form action="wf/myaction" method="post">
   <p>First name: <input type="text" name="fname" /></p>
   <p>Last name: <input type="text" name="lname" /></p>

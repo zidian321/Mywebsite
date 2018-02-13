@@ -1,4 +1,4 @@
-package com;
+package com.action;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ public class LoginAction extends ActionSupport {
 		session.commit();
 		// 关闭Session
 		session.close();
-			return SUCCESS;
+			return ERROR;
 
 	}
 
