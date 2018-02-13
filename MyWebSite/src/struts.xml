@@ -3,7 +3,7 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<package name="default" namespace="/fdf" extends="struts-default">
+	<package name="default" namespace="/" extends="struts-default">
 		<!-- name action的名字，访问时使用helloworld.action访问，class：实现类 -->
 		<action name="helloworld" class="cn.xhcoding.action.HelloWorldAction">
 			<!-- 结果集，即action中SUCCESS返回的视图 -->
