@@ -7,6 +7,6 @@
   </head>
   <body>
     <font color="red" size="10">${message} </font>
-     <input type="button" value="·µ»Ø" onclick="javascript:window.location.href ='login.jsp';">
+     <input type="button" value="·µ»Ø" onclick="javascript:window.location.href ='sign.jsp';">
   </body>
 </html>

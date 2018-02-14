@@ -11,7 +11,7 @@
   </script>
 <script type="text/javascript">
 
-function loginindex(){
+function signin(){
 	//alert("dsd");
 
     if(document.getElementById("username").value==''||document.getElementById("password").value==''){
@@ -25,13 +25,13 @@ function loginindex(){
     type: "POST",  
     url: "signAction.action",//注意路径  (后台登陆验证的方法)
     data:{"username":name,"password":pass}, 
-    dataType:"text",  
+    dataType: "json", 
     success:function(data){
     	console.log(data);
-      if(data=="1"){
-        alert("注册成功！")
+      if(data.status=="1"){
+        alert(data.message)
       }else{
-       alert("注册失败");
+       alert(data.message);
       }  
     }  
 });  
@@ -40,10 +40,12 @@ function loginindex(){
 <html>
   <head><title>注册界面</title></head>
   <body>
- 
+   <form action="#" method="post">
        用户名：<input name="username" id=username><br>
-       密 码：    <input type="password" id=password name="userpass"><br>
-      <input class="btn btn-success" type="button" value="注册" onclick="loginindex();">
+       密 码： <input type="password" id=password name="userpass"><br>
+      <input class="btn btn-success" type="button" value="注册" onclick="signin();">
       <input type="reset"  value="取 消">
+   </form>   
   </body>
+ <a href="welcome.jsp">点此登录</a>
 </html>

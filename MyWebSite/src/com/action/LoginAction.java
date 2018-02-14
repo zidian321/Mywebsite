@@ -20,9 +20,10 @@ import com.util.sqlSessionFactoryUtil;
 public class LoginAction extends ActionSupport {
 	private String username;
 	private String userpass;
+	private String message;
+
 
 	public String execute() throws IOException {//
-		String message ="用户名或密码错误，请重新输入";
 		SqlSessionFactory sqlf=sqlSessionFactoryUtil.getSqlSessionFactory();
 		SqlSession session = sqlf.openSession();
 		// 创建User对象
@@ -31,25 +32,41 @@ public class LoginAction extends ActionSupport {
 		try{
 		UserMapper um=session.getMapper(UserMapper.class);
 		user=um.selectUserByName(username);
-		if(userpass.equals(user.getPassword()))
-			{message="登录成功";
+		if(user!=null)
+		{
+			if(userpass.equals(user.getPassword()))
+			{
+			message="恭喜"+username+" 登录成功!";
 			HttpServletRequest request = ServletActionContext.getRequest();
 			request.setAttribute("message", message);
 				return SUCCESS;
 			}
-		}catch (Exception e) {
-			e.printStackTrace();
+			else{
+				message="密码错误";
+				HttpServletRequest request = ServletActionContext.getRequest();
+				request.setAttribute("message", message);
+					return ERROR;	
+			}
+		}
+		else {
+			message="该用户不存在"; 
 			HttpServletRequest request = ServletActionContext.getRequest();
 			request.setAttribute("message", message);
 			return ERROR;
+		
 		}
-		// 提交事务
-		session.commit();
-		// 关闭Session
-		session.close();
-		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("message", message);
-			return SUCCESS;
+		}catch (Exception e) {
+			e.printStackTrace();
+			message="错误";
+			HttpServletRequest request = ServletActionContext.getRequest();
+			request.setAttribute("message", message);
+			return ERROR;
+		}finally{
+			// 提交事务
+			session.commit();
+			// 关闭Session
+			session.close();
+		}
 
 	}
 
@@ -67,5 +84,12 @@ public class LoginAction extends ActionSupport {
 
 	public void setUserpass(String userpass) {
 		this.userpass = userpass;
+	}
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

@@ -7,7 +7,8 @@ pageEncoding="UTF-8"%>
 <title>Action Result</title>
 </head>
 <body>
-<h1>恭喜成功配置好基本的struts2环境</h1>
-<h2>Hello World, I am Successful</h2>
+${message}
+<h1>欢迎来到本网站</h1>
+<h2>情人节快乐</h2>
 </body>
 </html> 

@@ -7,7 +7,6 @@
   </head>
   <body>
     <font color="red" size="10"> ${message}</font>
-    ${message}
     
       <body>
     <form action="loginAction.action" method="post">
@@ -16,6 +15,6 @@
       <input type="submit" value="登录">
       <input type="reset"  value="取 消">
     </form>
-  </body>
+  <a href="sign.jsp">点此注册</a>
   </body>
 </html>
