@@ -11,9 +11,13 @@
 				/result.jsp
 			</result>
 		</action>
+		<action name="signAction" class="com.action.SignAction">
+			<result name="success">/jsp/welcome.jsp</result>
+			<result name="error">/jsp/error.jsp</result>
+		</action>
 		<action name="loginAction" class="com.action.LoginAction">
-			<result name="success">/welcome.jsp</result>
-			<result name="error">/error.jsp</result>
+			<result name="success">/jsp/welcome.jsp</result>
+			<result name="error">/jsp/error.jsp</result>
 		</action>
 
 	</package>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -17,39 +18,32 @@ import com.mybatis.mapper.UserMapper;
 import com.opensymphony.xwork2.ActionSupport;
 import com.util.sqlSessionFactoryUtil;
 
-public class LoginAction extends ActionSupport {
+public class SignAction extends ActionSupport {
 	private String username;
-	private String userpass;
+	private String password;
 
 	public String execute() throws IOException {//
-		String message ="用户名或密码错误，请重新输入";
+		String message ="注册成功";
 		SqlSessionFactory sqlf=sqlSessionFactoryUtil.getSqlSessionFactory();
 		SqlSession session = sqlf.openSession();
 		// 创建User对象
-		User user;
+		User user = new User(username, password);
 		// 插入数据
+		System.out.println("HHHHHHHHHHHHHHHHHHHHHHHH");
 		try{
 		UserMapper um=session.getMapper(UserMapper.class);
-		user=um.selectUserByName(username);
-		if(userpass.equals(user.getPassword()))
-			{message="登录成功";
-			HttpServletRequest request = ServletActionContext.getRequest();
-			request.setAttribute("message", message);
-				return SUCCESS;
-			}
+		um.save(user);
+		HttpServletResponse response = ServletActionContext.getResponse();
+		 response.getWriter().write("1");    //将数据返回前台ajax
 		}catch (Exception e) {
 			e.printStackTrace();
-			HttpServletRequest request = ServletActionContext.getRequest();
-			request.setAttribute("message", message);
-			return ERROR;
+			System.out.println("用户名重复");
 		}
 		// 提交事务
 		session.commit();
 		// 关闭Session
 		session.close();
-		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("message", message);
-			return SUCCESS;
+		return null;
 
 	}
 
@@ -61,11 +55,11 @@ public class LoginAction extends ActionSupport {
 		this.username = username;
 	}
 
-	public String getUserpass() {
-		return userpass;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUserpass(String userpass) {
-		this.userpass = userpass;
+	public void setPassword(String userpass) {
+		this.password = userpass;
 	}
 }

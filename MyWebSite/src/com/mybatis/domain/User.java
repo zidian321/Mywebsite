@@ -24,9 +24,9 @@ public class User implements Serializable{
 	// 用户标识
 	private Integer id;
 	// 用户姓名
-	private String name;
+	private String namefdsfsdfsd;
 	// 用户密碼
-	private String password;
+	private String passwordfdsfsd;
 	// 用户年龄
 	
 	// 无参数构造器
@@ -36,8 +36,8 @@ public class User implements Serializable{
 	// 有参数构造器
 	public User( String name, String password) {
 		super();
-		this.name = name;
-		this.password = password;
+		this.namefdsfsdfsd = name;
+		this.passwordfdsfsd = password;
 	}
 	 // setter和getter方法
 	public Integer getId() {
@@ -47,22 +47,22 @@ public class User implements Serializable{
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return namefdsfsdfsd;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.namefdsfsdfsd = name;
 	}
-	public String getPasswordd() {
-		return password;
+	public String getPassword() {
+		return passwordfdsfsd;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.passwordfdsfsd = password;
 	}
 
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + "]";
+		return "User [id=" + id + "]";
 	}
 	
 	

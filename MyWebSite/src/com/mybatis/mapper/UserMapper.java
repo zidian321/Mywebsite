@@ -6,4 +6,5 @@ public interface UserMapper {
    
 	
 	void save(User user)throws DataAccessException;
+	User selectUserByName(String username);
 }

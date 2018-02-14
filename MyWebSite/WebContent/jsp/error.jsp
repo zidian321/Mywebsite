@@ -3,10 +3,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>»¶Ó­</title>
+    <title></title>
   </head>
   <body>
-    <font color="red" size="10"> ${message}</font>
-    ${message}
+    <font color="red" size="10">${message} </font>
+     <input type="button" value="·µ»Ø" onclick="javascript:window.location.href ='login.jsp';">
   </body>
 </html>
