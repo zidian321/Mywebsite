@@ -6,13 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-\
+
 <body>
-hello Hong yu
-<form action="wf/myaction" method="post">
-  <p>First name: <input type="text" name="fname" /></p>
-  <p>Last name: <input type="text" name="lname" /></p>
-  <input type="submit" value="Submit" />
-</form>
+
 </body>
 </html>

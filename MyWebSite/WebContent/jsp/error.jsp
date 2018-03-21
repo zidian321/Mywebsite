@@ -1,10 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <title></title>
   </head>
   <body>
-    <font color="red" size="10">用户或密码错误！</font>
+    <font color="red" size="10">${message} </font>
+     <input type="button" value="返回" onclick="javascript:window.location.href ='sign.jsp';">
   </body>
 </html>

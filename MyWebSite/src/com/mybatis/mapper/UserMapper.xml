@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指用户自定义的命名空间。 -->
+<mapper namespace="com.mybatis.mapper.UserMapper">
+
+<!-- 
+	id="save"是唯一的标示符
+	parameterType属性指明插入时使用的参数类型
+	useGeneratedKeys="true"表示使用数据库的自动增长策略
+ -->
+   <resultMap type="com.mybatis.domain.User" id="userResultMap">
+		<id property="id" column="id"/>
+		<result property="username" column="username"/>
+		<result property="loginname" column="loginname"/>
+
+	</resultMap>
+  <insert id="save" parameterType="com.mybatis.domain.User" useGeneratedKeys="true">
+  	INSERT INTO USER(name,password) 
+  	VALUES(#{name},#{password})
+  </insert>
+   <select id="selectUserByName" parameterType="String" resultMap="userResultMap">
+  	SELECT * FROM user  WHERE name = #{username}
+  </select>
+
+</mapper>
