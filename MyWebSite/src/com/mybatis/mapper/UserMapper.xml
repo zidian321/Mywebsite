@@ -20,7 +20,7 @@
   	VALUES(#{name},#{password})
   </insert>
    <select id="selectUserByName" parameterType="String" resultMap="userResultMap">
-  	SELECT * FROM user  WHERE name = #{username}
+  	SELECT * FROM user  WHERE name = #{hjghghfghfgfgfg}
   </select>
 
 </mapper>
