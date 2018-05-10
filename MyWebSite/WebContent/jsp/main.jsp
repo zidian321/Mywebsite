@@ -8,6 +8,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 ${message}
+${status}
 <h1>欢迎来到本网站</h1>
 <h2>情人节快乐</h2>
 </body>
